@@ -1,0 +1,4 @@
+
+python lorem
+:wq!
+
