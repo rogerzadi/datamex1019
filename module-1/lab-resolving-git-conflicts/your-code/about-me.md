@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Mi nombre es Rogelio Raul Zaragoza Diaz
 
 Quien soy
@@ -19,6 +19,3 @@ Me gustaria trabajar en alguna empresa que este en contacto con pymes o proyecto
 Me gustaria que fuera pensando y creando nuevos modelos de negocios basados en estos analisis que encontraremos
 Mi objetivo personal a largo plazo es crear un emprendimiento que impacte al ecosistema mexicano a bien
 
-
-=======
->>>>>>> lab-resolving-git_RZ1
