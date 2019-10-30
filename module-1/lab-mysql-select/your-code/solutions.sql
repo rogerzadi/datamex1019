@@ -26,34 +26,23 @@ on t.pub_id= pu.pub_id) Resu
 group by AUTHOR_ID, PUBLISHERS
 
 ##Challenge3
-
-SELECT AUTHOR_ID, LAST_NAME, FIRST_NAME, COUNT(TITLE) as TITLE_COUNT
-FROM
-(SELECT a.au_id as AUTHOR_ID, a.au_lname as LAST_NAME, a.au_fname as FIRST_NAME, t.title as TITLE
-FROM authors as a
-left join titleauthor as ta
-on ta.au_id= a.au_id
-inner join titles t
-on ta.title_id = t.title_id
-inner join sales s
-on t.title_id = s.title_id) as t
-GROUP BY AUTHOR_ID
-order by TITLE_COUNT desc
-limit 3 
-;
+select au.au_id as AUTHORID, au.au_lname as LASTNAME, au.au_fname as FIRSTNAME, sum(sal.qty) as TOTAL
+from authors au
+inner join titleauthor as tau
+on au.au_id = tau.au_id
+inner join sales as sal
+on tau.title_id = sal.title_id
+group by AUTHORID
+order by TOTAL desc
+limit 3 ;
 
 ##Challenge 4
-
-SELECT AUTHOR_ID, LAST_NAME, FIRST_NAME, COUNT(TITLE) as TITLE_COUNT
-FROM
-(SELECT a.au_id as AUTHOR_ID, a.au_lname as LAST_NAME, a.au_fname as FIRST_NAME, t.title as TITLE
-FROM authors as a
-left join titleauthor as ta
-on ta.au_id= a.au_id
-left join titles t
-on ta.title_id = t.title_id
-left join sales s
-on t.title_id = s.title_id) as t
-GROUP BY AUTHOR_ID
-order by TITLE_COUNT asc
+select au.au_id as AUTHORID, au.au_lname as LASTNAME, au.au_fname as FIRSTNAME, COALESCE(sum(sal.qty),0) as TOTAL
+from authors au
+left join titleauthor as tau
+on au.au_id = tau.au_id
+left join sales as sal
+on tau.title_id = sal.title_id
+group by AUTHORID
+order by TOTAL desc
 ;
