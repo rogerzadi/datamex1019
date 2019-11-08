@@ -1,0 +1,5 @@
+la columna species es la que tiene mas datos vacios sin embargo no la eliminaria porque se pueden sacar datos muy interesantes de esta columna, hay otras como href que repiten info, esas yo optaria por eliminarla
+
+Columna Date: cree una funcion la cual busca el patron nn/ll/nnnn, sin importar si 
+existe otras palabras o letras acompañandola, esta solo extraera ese patron, me encontre con un problema ya que al querer aplicarla al df, me cometia error por no tener los tipos de datos iguales, por lo que cree unsa funcion que detectara si existia.
+
